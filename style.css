@@ -15,14 +15,6 @@ body {
   overflow-x: hidden;
 }
 
-/* particles */
-#particles {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-
 /* card */
 .card {
   width: 100%;
@@ -38,41 +30,35 @@ body {
   animation: cardGlow 4s ease-in-out infinite;
 }
 @keyframes cardGlow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(255,255,255,.05),0 15px 40px rgba(0,0,0,.8);
-  }
-  50% {
-    box-shadow: 0 0 35px rgba(255,255,255,.12),0 20px 50px rgba(0,0,0,.9);
-  }
+  0%,100% { box-shadow: 0 0 20px rgba(255,255,255,.05),0 15px 40px rgba(0,0,0,.8); }
+  50% { box-shadow: 0 0 35px rgba(255,255,255,.12),0 20px 50px rgba(0,0,0,.9); }
 }
 
-/* header */
+/* header с видео */
 .header {
   height: 160px;
-  background:
-    radial-gradient(circle at top left,#444,#000 60%),
-    linear-gradient(135deg,#000,#222);
   position: relative;
   overflow: hidden;
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
 }
 
-/* Видео за аватаркой */
+/* видео баннер */
 .avatar-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  border-bottom-left-radius: 22px;
-  border-bottom-right-radius: 22px;
   z-index: 0;
+  overflow: hidden;
 }
 
 .avatar-bg-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.5); /* затемнение для контраста с аватаркой */
 }
 
 /* avatar */
@@ -109,7 +95,7 @@ body {
 .desc { font-size: 14px; line-height: 1.6; color: #ddd; margin: 18px 0 14px; }
 .neon-text { text-shadow: 0 0 6px rgba(255,255,255,.6),0 0 12px rgba(255,255,255,.4); }
 
-/* telegram */
+/* Telegram */
 .tg-wrap {
   display: flex;
   justify-content: center;
@@ -128,9 +114,6 @@ body {
   background-size: 70%;
   background-repeat: no-repeat;
   background-position: center;
-}
-.glow-btn {
-  position: relative;
 }
 .glow-btn::after {
   content: "";
