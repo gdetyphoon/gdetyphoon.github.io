@@ -8,13 +8,18 @@
 </head>
 <body>
 
-<div class="card">
+<!-- particles -->
+<div id="particles"></div>
+
+<div class="card glow">
 
   <div class="header"></div>
-  <img class="avatar" src="https://i.imgur.com/7kQEsHU.png">
+
+  <!-- AVATAR FROM /photo -->
+  <img class="avatar pulse" src="photo/avatar.jpg" alt="avatar">
 
   <div class="body">
-    <div class="name">GdeTyphoon</div>
+    <div class="name neon-text">GdeTyphoon</div>
     <div class="subtitle">Digital profile</div>
 
     <div class="desc">
@@ -22,33 +27,32 @@
       Social Engineer, Reverse Engineer
     </div>
 
-    <!-- MUSIC PLAYER -->
-    <div class="player">
+    <!-- PLAYER -->
+    <div class="player glass">
       <button id="playBtn" class="play-btn">▶</button>
       <span class="track-name">Happy Nation</span>
     </div>
 
     <!-- TELEGRAM -->
     <div class="tg-wrap">
-      <a class="tg-btn" href="https://t.me/USERNAME" target="_blank">✈</a>
+      <a class="tg-btn glow-btn" href="https://t.me/USERNAME" target="_blank">✈</a>
     </div>
   </div>
 
   <!-- COMMENTS -->
-  <div class="comments">
+  <div class="comments glass">
     <h2>Комментарии</h2>
     <div id="commentList"></div>
 
     <form id="commentForm" class="form">
       <input type="text" id="name" placeholder="Твоё имя" required>
       <textarea id="text" placeholder="Оставь комментарий..." required></textarea>
-      <button type="submit">Отправить</button>
+      <button type="submit" class="glow-btn">Отправить</button>
     </form>
   </div>
 
 </div>
 
-<!-- AUDIO -->
 <audio id="music" src="music/happy-nation.mp3" preload="auto"></audio>
 
 <script src="script.js"></script>
