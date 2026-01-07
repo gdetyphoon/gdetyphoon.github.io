@@ -16,34 +16,17 @@ body {
   color: #fff;
 }
 
-/* Рамка по всему сайту */
+/* Легкая серая рамка по всему сайту */
 .site-border {
   width: 100%;
   max-width: 900px;
   min-height: 90vh;
   padding: 30px;
-  border: 6px solid; /* толщина рамки */
-  border-radius: 30px; /* заокругление углов */
-  border-image-slice: 1;
-  border-image-source: linear-gradient(135deg, #ff6ec4, #7873f5); /* градиент */
-  box-shadow: 0 0 20px #ff6ec4, 0 0 40px #7873f5; /* glow */
-  animation: neonGlow 2s infinite alternate;
+  border: 2px solid #aaa; /* легкая серая рамка */
+  border-radius: 20px;    /* закругленные углы */
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* Glow анимация рамки */
-@keyframes neonGlow {
-  0% {
-    box-shadow: 0 0 20px #ff6ec4, 0 0 40px #7873f5;
-  }
-  50% {
-    box-shadow: 0 0 40px #ff6ec4, 0 0 80px #7873f5;
-  }
-  100% {
-    box-shadow: 0 0 30px #ff6ec4, 0 0 60px #7873f5;
-  }
 }
 
 /* Контент внутри рамки */
@@ -55,8 +38,5 @@ body {
 .info {
   font-size: 28px;
   font-weight: bold;
-  background: linear-gradient(135deg, #ff6ec4, #7873f5);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 10px #ff6ec4, 0 0 20px #7873f5;
+  color: #ccc; /* серый текст */
 }
