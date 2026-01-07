@@ -17,12 +17,6 @@ body {
   justify-content: center;
   padding: 20px 0;
   overflow-x: hidden;
-  animation: bgMove 14s ease-in-out infinite alternate;
-}
-
-@keyframes bgMove {
-  from { background-position: 0 0, 100% 100%; }
-  to   { background-position: 100% 0, 0 100%; }
 }
 
 /* STARS */
@@ -36,11 +30,9 @@ body {
   opacity: .35;
   animation: starsMove 25s linear infinite;
   pointer-events: none;
-  z-index: 0;
 }
 
 @keyframes starsMove {
-  from { transform: translateY(0); }
   to { transform: translateY(-300px); }
 }
 
@@ -52,54 +44,22 @@ body {
   border-radius: 22px;
   overflow: hidden;
   position: relative;
-  z-index: 1;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(255,255,255,.08);
-  animation: cardGlow 4s ease-in-out infinite;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  border-radius: 24px;
-  background: linear-gradient(120deg, #fff, #777, #fff);
-  filter: blur(12px);
-  opacity: .25;
-  animation: borderRotate 8s linear infinite;
-  z-index: -1;
-}
-
-@keyframes borderRotate {
-  to { transform: rotate(360deg); }
-}
-
-@keyframes cardGlow {
-  0%,100% {
-    box-shadow: 0 0 20px rgba(255,255,255,.05),
-                0 15px 40px rgba(0,0,0,.8);
-  }
-  50% {
-    box-shadow: 0 0 35px rgba(255,255,255,.12),
-                0 20px 55px rgba(0,0,0,.9);
-  }
+  backdrop-filter: blur(14px);
+  box-shadow: 0 20px 55px rgba(0,0,0,.9);
 }
 
 /* HEADER */
 .header {
   height: 160px;
-  position: relative;
   overflow: hidden;
-  border-bottom-left-radius: 22px;
-  border-bottom-right-radius: 22px;
 }
 
 .header-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(.45) contrast(1.1);
+  filter: brightness(.45);
 }
 
 /* AVATAR */
@@ -113,19 +73,16 @@ body {
   left: 50%;
   transform: translateX(-50%);
   object-fit: cover;
-  z-index: 2;
   animation: float 6s ease-in-out infinite, pulse 2.5s infinite;
 }
 
 @keyframes float {
-  0%,100% { transform: translateX(-50%) translateY(0); }
   50% { transform: translateX(-50%) translateY(-10px); }
 }
 
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 rgba(255,255,255,.6); }
   70% { box-shadow: 0 0 0 18px rgba(255,255,255,0); }
-  100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
 }
 
 /* BODY */
@@ -140,12 +97,6 @@ body {
   background: linear-gradient(90deg, #fff, #aaa, #fff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: textGlow 3s infinite alternate;
-}
-
-@keyframes textGlow {
-  from { filter: drop-shadow(0 0 4px rgba(255,255,255,.3)); }
-  to   { filter: drop-shadow(0 0 10px rgba(255,255,255,.8)); }
 }
 
 .subtitle {
@@ -154,35 +105,71 @@ body {
   color: #aaa;
 }
 
-.desc {
-  font-size: 14px;
+/* NOTICE BLOCK */
+.notice {
+  margin: 18px 0;
+  padding: 16px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.1);
+  text-align: left;
+  font-size: 13px;
   line-height: 1.6;
-  color: #ddd;
-  margin: 18px 0 16px;
+}
+
+.notice-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.notice-title span {
+  color: #fff;
+  text-shadow: 0 0 6px rgba(255,255,255,.6);
+}
+
+.notice-text span {
+  color: #fff;
+  font-weight: 600;
+}
+
+.notice-warning {
+  margin-top: 10px;
+  font-weight: 700;
+  color: #ffb3b3;
+}
+
+.notice-list {
+  margin: 8px 0 8px 16px;
+}
+
+.notice-list li {
+  margin-bottom: 6px;
+}
+
+.notice-footer {
+  margin-top: 8px;
+  font-weight: 600;
+  text-align: center;
+  opacity: .85;
 }
 
 /* TELEGRAM */
 .tg-wrap {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .tg-btn {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,.15);
-  background: transparent;
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 60%;
-  cursor: pointer;
-  transition: transform .3s ease, box-shadow .3s ease;
+  border: 1px solid rgba(255,255,255,.2);
+  background: transparent url('https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg') center / 60% no-repeat;
+  transition: transform .3s, box-shadow .3s;
 }
 
 .tg-btn:hover {
-  transform: scale(1.15) rotate(6deg);
+  transform: scale(1.15);
   box-shadow: 0 0 22px rgba(255,255,255,.7);
 }
-
