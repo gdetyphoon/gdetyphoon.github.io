@@ -1,11 +1,14 @@
-// MUSIC — включение только по кнопке
+// ===========================
+// MUSIC — play/pause по кнопке
+// ===========================
 const audio = document.getElementById("music");
 const btn = document.getElementById("playBtn");
 
-// Сбрасываем автозапуск, чтобы кнопка точно работала
 btn.addEventListener("click", () => {
   if (audio.paused) {
-    audio.play().catch(() => alert("Браузер блокирует воспроизведение музыки. Нажмите ещё раз."));
+    audio.play().catch(() => {
+      alert("Браузер блокирует воспроизведение музыки. Нажмите ещё раз.");
+    });
     btn.textContent = "❚❚"; // пауза
   } else {
     audio.pause();
@@ -13,7 +16,9 @@ btn.addEventListener("click", () => {
   }
 });
 
+// ===========================
 // COMMENTS — сохраняются в localStorage
+// ===========================
 const form = document.getElementById("commentForm");
 const list = document.getElementById("commentList");
 let comments = JSON.parse(localStorage.getItem("comments") || "[]");
@@ -46,11 +51,15 @@ form.addEventListener("submit", e => {
   form.reset();
 });
 
+// ===========================
 // AVATAR — статический с GitHub
+// ===========================
 const avatar = document.getElementById("avatar");
 avatar.src = "https://gdetyphoon.github.io/photo/avatar.jpg";
 
+// ===========================
 // PARTICLES — красивый фон
+// ===========================
 const pBox = document.getElementById("particles");
 for (let i = 0; i < 30; i++) {
   const s = document.createElement("span");
