@@ -3,40 +3,53 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 body {
-  min-height: 100vh;
-  background-color: #0a0a0a;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+  height: 100vh;
+  background: #000;
+  overflow: hidden;
   color: #fff;
 }
 
-/* Легкая серая рамка по всему сайту */
-.site-border {
-  width: 100%;
-  max-width: 900px;
-  min-height: 90vh;
-  padding: 30px;
-  border: 2px solid #aaa; /* легкая серая рамка */
-  border-radius: 20px;    /* закругленные углы */
+/* ФОН КАК НА СКРИНЕ */
+.background {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at top, rgba(130,0,255,0.25), transparent 40%),
+    radial-gradient(circle at bottom, rgba(255,0,100,0.25), transparent 45%),
+    linear-gradient(180deg, #070707, #000);
+  z-index: -2;
+}
+
+/* ВИНЬЕТКА */
+.background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent 55%, rgba(0,0,0,0.85));
+}
+
+/* ЦЕНТРОВКА */
+.profile-page {
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
-/* Контент внутри рамки */
-.content {
+/* КАРТОЧКА / ОБВОДКА */
+.profile-card {
   width: 100%;
-  text-align: center;
-}
+  max-width: 420px;
+  min-height: 420px;
 
-.info {
-  font-size: 28px;
-  font-weight: bold;
-  color: #ccc; /* серый текст */
-}
+  background: rgba(18, 18, 18, 0.65);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-radius: 30px;
+  border: 1px solid rgba
