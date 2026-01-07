@@ -16,7 +16,7 @@ body {
   position: relative;
 }
 
-/* Фон со звездами */
+/* Звёздный фон */
 .stars {
   position: fixed;
   inset: 0;
@@ -28,7 +28,6 @@ body {
   animation: starsMove 30s linear infinite;
   pointer-events: none;
 }
-
 @keyframes starsMove {
   to { transform: translateY(-300px); }
 }
@@ -69,7 +68,6 @@ body {
   border-bottom-left-radius: 22px;
   border-bottom-right-radius: 22px;
 }
-
 .header-video {
   width: 100%;
   height: 100%;
@@ -89,20 +87,15 @@ body {
   transform: translateX(-50%);
   object-fit: cover;
 }
-
 .float { animation: float 6s ease-in-out infinite; }
 @keyframes float { 50% { transform: translateX(-50%) translateY(-8px); } }
-
 .pulse { animation: pulse 2.5s infinite; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(0,249,255,.6); } 70% { box-shadow: 0 0 0 14px rgba(0,249,255,0); } }
 
 /* BODY */
-.body {
-  padding: 70px 12px 20px;
-  text-align: center;
-}
+.body { padding: 70px 12px 20px; text-align: center; }
 
-/* NAME + VERIFIED справа */
+/* NAME + VERIFIED */
 .name-wrapper {
   display: flex;
   justify-content: center;
@@ -112,45 +105,18 @@ body {
   opacity: 0;
   animation: slideInRight 0.8s forwards;
 }
+.name { font-size: 24px; font-weight: 800; background: linear-gradient(90deg,#fff,#00f9ff,#fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow:0 0 8px rgba(0,249,255,.5);}
+.verified { width: 24px; height: 24px; animation: pulse 2s infinite;}
+.verified img { width: 100%; height: 100%; filter: drop-shadow(0 0 4px #00f9ff) drop-shadow(0 0 10px rgba(0,249,255,.5)); border-radius: 50%; }
 
-.slide-in { animation: slideInRight 0.8s forwards; }
+@keyframes slideInRight { from{transform:translateX(30px);opacity:0;} to{transform:translateX(0);opacity:1;} }
+
 .slide-in-delay { animation: slideInRight 0.8s 0.3s forwards; }
 .slide-in-delay2 { animation: slideInRight 0.8s 0.6s forwards; }
 .slide-in-delay3 { animation: slideInRight 0.8s 0.9s forwards; }
 
-@keyframes slideInRight {
-  from { transform: translateX(30px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-.name {
-  font-size: 24px;
-  font-weight: 800;
-  background: linear-gradient(90deg, #fff, #00f9ff, #fff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 8px rgba(0,249,255,.5);
-}
-
-.verified {
-  width: 24px;
-  height: 24px;
-  animation: pulse 2s infinite;
-}
-
-.verified img {
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 0 4px #00f9ff) drop-shadow(0 0 10px rgba(0,249,255,.5));
-  border-radius: 50%;
-}
-
 /* SUBTITLE */
-.subtitle {
-  margin-top: 6px;
-  font-size: 13px;
-  color: #aaa;
-}
+.subtitle { margin-top: 6px; font-size: 13px; color: #aaa; }
 
 /* NOTICE */
 .notice {
@@ -164,36 +130,16 @@ body {
   text-align: left;
   box-shadow: 0 0 12px rgba(255,255,255,.05);
 }
+.notice-title { font-weight: 700; font-size: 15px; margin-bottom: 8px; }
+.notice-title .author { font-weight: 400; font-size: 13px; color: #00f9ff; margin-left:6px; }
+.notice-main { font-size:13px; color:#ddd; line-height:1.5; }
+.notice-details summary { cursor:pointer; color:#00f9ff; font-weight:500; margin-top:6px; display:block; }
+.notice-details ul { padding-left:20px; margin-top:6px; font-size:13px; }
 
 /* TELEGRAM BUTTON */
-.tg-wrap {
-  display: flex;
-  justify-content: center;
-  margin-top: 12px;
-}
-
-.tg-btn {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,.2);
-  background: transparent url("https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg") center / 60% no-repeat;
-  transition: transform .3s, box-shadow .3s;
-}
-
-.tg-btn:hover {
-  transform: scale(1.2) rotate(5deg);
-  box-shadow: 0 0 22px rgba(0,249,255,.6);
-}
+.tg-wrap { display:flex; justify-content:center; margin-top:12px; }
+.tg-btn { width:50px; height:50px; border-radius:50%; border:1px solid rgba(255,255,255,.2); background:transparent url("https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg") center / 60% no-repeat; transition: transform .3s, box-shadow .3s; }
+.tg-btn:hover { transform: scale(1.2) rotate(5deg); box-shadow:0 0 22px rgba(0,249,255,.6); }
 
 /* MEDIA QUERIES */
-@media (max-width: 420px) {
-  .card { width: 95%; }
-  .name { font-size: 20px; }
-  .verified { width: 20px; height: 20px; }
-  .subtitle { font-size: 12px; }
-  .notice { font-size: 12px; padding: 12px; }
-  .tg-btn { width: 42px; height: 42px; }
-  .avatar { width: 70px; height: 70px; top: 85px; }
-  .header { height: 100px; }
-}
+@media(max-width:420px){.card{width:95%;}.name{font-size:20px;}.verified{width:20px;height:20px;}.subtitle{font-size:12px;}.notice{font-size:12px;padding:12px;}.tg-btn{width:42px;height:42px;}.avatar{width:70px;height:70px;top:85px;}.header{height:100px;}}
