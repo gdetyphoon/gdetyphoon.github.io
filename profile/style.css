@@ -7,80 +7,54 @@
 
 body {
   min-height: 100vh;
-  background: radial-gradient(circle at top, #0b0b0b, #050505 60%, #000);
+  background: #000; /* черный фон */
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  overflow-x: hidden;
 }
 
-/* particles */
-#particles {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* card */
 .card {
   width: 100%;
-  max-width: 380px;
-  background: linear-gradient(180deg, #0a0a0a, #111, #0a0a0a);
-  border-radius: 22px;
-  overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
-  position: relative;
-  z-index: 1;
+  max-width: 600px;
+  background: #111; /* чуть светлее, чтобы выделялось */
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.8);
   padding: 30px;
+  text-align: center;
 }
+
 .glow {
   animation: cardGlow 4s ease-in-out infinite;
 }
+
 @keyframes cardGlow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05),
-                0 15px 40px rgba(0, 0, 0, 0.8);
-  }
-  50% {
-    box-shadow: 0 0 35px rgba(255, 255, 255, 0.12),
-                0 20px 50px rgba(0, 0, 0, 0.9);
-  }
+  0%,100% { box-shadow: 0 0 20px rgba(255,255,255,0.05), 0 15px 40px rgba(0,0,0,0.8); }
+  50% { box-shadow: 0 0 35px rgba(255,255,255,0.12), 0 20px 50px rgba(0,0,0,0.9); }
 }
 
-/* title */
 .name {
   font-size: 28px;
   font-weight: 700;
-  text-align: center;
-  margin-bottom: 12px;
-  text-shadow: 0 0 6px rgba(255,255,255,.6), 0 0 12px rgba(255,255,255,.4);
+  margin-bottom: 8px;
 }
 
-/* subtitle */
 .subtitle {
   font-size: 14px;
   color: #aaa;
-  text-align: center;
   margin-bottom: 20px;
 }
 
-/* buttons (пример) */
-.profile-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 12px;
-  background: linear-gradient(135deg,#ff6ec4,#7873f5);
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 0 15px rgba(255,110,196,0.6), 0 0 20px rgba(120,115,245,0.5);
-  text-align: center;
+.desc {
+  font-size: 16px;
+  color: #ddd;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
-.profile-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(255,110,196,0.8), 0 0 30px rgba(120,115,245,0.7);
+
+.info p {
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.5;
 }
