@@ -358,17 +358,14 @@ body {
 
 .watermark {
     position: fixed;
-    bottom: 12px;
-    right: 14px;
+    right: 6px;
+    bottom: 50%;
+
+    transform: rotate(-90deg);
 
     font-size: 11px;
-    font-family: "Inter", Arial, sans-serif;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-
-    color: rgba(255, 255, 255, 0.22);
-    pointer-events: none;
-    user-select: none;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.18);
 }
 
 .watermark em {
