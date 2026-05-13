@@ -480,4 +480,157 @@ body {
     width: 45px;
     height: 45px;
   }
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+.section-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-title .count {
+  font-size: 13px;
+  background: #e8eaf6;
+  color: #5c6bc0;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+#comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.comment-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 14px 16px;
+  border: 1px solid #e8eaf6;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.av-blue   { background: #dce8ff; color: #2563eb; }
+.av-green  { background: #d1fae5; color: #059669; }
+.av-purple { background: #ede9fe; color: #7c3aed; }
+.av-orange { background: #ffedd5; color: #ea580c; }
+.av-pink   { background: #fce7f3; color: #db2777; }
+
+.comment-nick {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.comment-time {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.comment-text {
+  font-size: 15px;
+  line-height: 1.55;
+  color: #374151;
+}
+
+.form-box {
+  background: #fff;
+  border-radius: 20px;
+  padding: 18px 16px;
+  border: 1px solid #e8eaf6;
+}
+
+.form-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.field-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.field-input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  font-family: 'Nunito', sans-serif;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  background: #f9fafb;
+  color: #1a1a2e;
+  outline: none;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+
+.field-input:focus {
+  border-color: #6366f1;
+  background: #fff;
+}
+
+textarea.field-input {
+  height: 90px;
+  resize: none;
+}
+
+.btn-send {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.btn-send:active {
+  background: #4f46e5;
+  transform: scale(0.98);
+}
+
+.error-msg {
+  font-size: 13px;
+  color: #ef4444;
+  margin-top: 10px;
+  display: none;
+  text-align: center;
+}
 }
