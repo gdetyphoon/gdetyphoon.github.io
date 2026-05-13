@@ -66,6 +66,25 @@
 
 </details>
 </div>
+      <h2 class="section-title">
+  Комментарии
+  <span class="count" id="count">0</span>
+</h2>
+
+<div id="comments-list"></div>
+
+<div class="form-box">
+  <p class="form-title">Оставить комментарий</p>
+
+  <label class="field-label" for="nick">Ваш ник</label>
+  <input class="field-input" id="nick" type="text" placeholder="Например: Иван_99" autocomplete="off" />
+
+  <label class="field-label" for="msg">Комментарий</label>
+  <textarea class="field-input" id="msg" placeholder="Напишите что-нибудь..."></textarea>
+
+  <button class="btn-send" onclick="addComment()">Отправить</button>
+  <p class="error-msg" id="err">Заполните ник и комментарий</p>
+</div>
 
 </body>
 </html>
